@@ -25,10 +25,13 @@ public class GameStateManager {
 	}
 
 	public void alternateCurrentPlayer() {
-		if(currentPlayerPiece == PieceType.X) {
-			currentPlayerPiece = PieceType.O;
-		} else if (currentPlayerPiece == PieceType.O) {
-			currentPlayerPiece = PieceType.X;
+
+		switch(getCurrentPlayerPiece()) {
+			case X:
+				setCurrentPlayerPiece(PieceType.O);
+				break;
+			case O:
+				setCurrentPlayerPiece(PieceType.X);
 		}
 		System.out.printf("\n\n\nNow player %s's turn", currentPlayerPiece.name());
 	}
