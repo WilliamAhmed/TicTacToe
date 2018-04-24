@@ -1,6 +1,6 @@
 package com.tictactoe.logic;
 
-import com.tictactoe.model.Board;
+import com.tictactoe.model.board.Board;
 import com.tictactoe.model.Coordinate;
 import com.tictactoe.model.PieceType;
 import org.junit.Test;

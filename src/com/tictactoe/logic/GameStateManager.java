@@ -33,10 +33,6 @@ public class GameStateManager {
 		System.out.printf("\n\n\nNow player %s's turn", currentPlayerPiece.name());
 	}
 
-	public void setCurrentPlayerPiece(PieceType playerPiece) {
-		currentPlayerPiece = playerPiece;
-	}
-
 	public PieceType getCurrentPlayerPiece() {
 		return currentPlayerPiece;
 	}

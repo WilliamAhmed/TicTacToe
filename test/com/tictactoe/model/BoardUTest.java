@@ -1,5 +1,6 @@
 package com.tictactoe.model;
 
+import com.tictactoe.model.board.Board;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
