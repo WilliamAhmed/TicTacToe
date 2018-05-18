@@ -9,14 +9,9 @@ import com.game.PlayerMarker;
 public class Board {
 
 	private PlayerMarker[][] board;
-	private static final int DEFAULT_BOARD_SIZE = 3;
 	private boolean lastPiecePlacedSuccessfully = false;
 
 	private int boardSize;
-
-	public Board() {
-		this(DEFAULT_BOARD_SIZE);
-	}
 
 	public Board(int boardSize) {
 		this.boardSize = boardSize;

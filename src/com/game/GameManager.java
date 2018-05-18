@@ -20,8 +20,8 @@ public class GameManager {
 
 	}
 
-	public void initialiseGame() {
-		board = new Board();
+	public void initialiseGame(int boardSize) {
+		board = new Board(boardSize);
 		currentPlayer = PlayerMarker.X;
 		winManager = new WinManager(board, currentPlayer);
 		gameRunning = true;
@@ -60,6 +60,10 @@ public class GameManager {
 
 	public boolean isGameRunning() {
 		return gameRunning;
+	}
+
+	public int getBoardSize() {
+		return board.getBoardSize();
 	}
 
 	private void alternatePlayer() {

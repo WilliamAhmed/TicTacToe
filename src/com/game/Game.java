@@ -8,42 +8,20 @@ import com.game.gui.GameWindow;
  */
 public class Game {
 
+	private static final int DEFAULT_BOARD_SIZE = 3;
+
 	public static void main(String[] args) {
+
+		int boardSize = DEFAULT_BOARD_SIZE;
+
+		if(args.length > 0) {
+			boardSize = Integer.parseInt(args[0]);
+		}
+
 		GameManager gameManager = new GameManager();
-		gameManager.initialiseGame();
+		gameManager.initialiseGame(boardSize);
 
 		GameWindow gameWindow = new GameWindow(gameManager);
 		gameWindow.setUp();
-
-		// X Wins Row 1
-//		gameManager.placePiece(0,0); // X
-//		gameManager.placePiece(1,1); // O
-//		gameManager.placePiece(1,0); // X
-//		gameManager.placePiece(2,1); // O
-//		gameManager.placePiece(2,0); // X
-
-		// O Wins Row 3
-//		gameManager.placePiece(1,1); // X
-//		gameManager.placePiece(0,2); // O
-//		gameManager.placePiece(2,1); // X
-//		gameManager.placePiece(1,2); // O
-//		gameManager.placePiece(2,0); // X
-//		gameManager.placePiece(2,2); // O
-
-		// X Wins Col 1
-//		gameManager.placePiece(0,0); // X
-//		gameManager.placePiece(1,1); // O
-//		gameManager.placePiece(0,1); // X
-//		gameManager.placePiece(2,1); // O
-//		gameManager.placePiece(0,2); // X
-
-		// O Wins Col 3
-//		gameManager.placePiece(1,1); // X
-//		gameManager.placePiece(2,0); // O
-//		gameManager.placePiece(0,1); // X
-//		gameManager.placePiece(2,1); // O
-//		gameManager.placePiece(0,2); // X
-//		gameManager.placePiece(2,2); // O
-
 	}
 }
