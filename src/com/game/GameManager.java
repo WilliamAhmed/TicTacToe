@@ -52,11 +52,14 @@ public class GameManager {
 				System.out.printf("\nUnable to place at (%d, %d). Player %s, please choose a different location", x, y, currentPlayer.name());
 			}
 		}
-
 	}
 
-	public String getCurrentPlaceMarker() {
+	public String getCurrentPlayerMarker() {
 		return currentPlayer.name();
+	}
+
+	public boolean isGameRunning() {
+		return gameRunning;
 	}
 
 	private void alternatePlayer() {

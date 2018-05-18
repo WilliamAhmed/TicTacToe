@@ -1,7 +1,7 @@
 package com.game.placecommand;
 
-import com.game.board.Board;
 import com.game.PlayerMarker;
+import com.game.board.Board;
 
 /**
  * @author WilliamAhmed
