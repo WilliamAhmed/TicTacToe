@@ -1,6 +1,7 @@
 package com.game;
 
 import com.game.gui.GameWindow;
+import com.game.io.file.properties.PropertiesLoader;
 
 /**
  * @author WilliamAhmed
@@ -8,15 +9,9 @@ import com.game.gui.GameWindow;
  */
 public class Game {
 
-	private static final int DEFAULT_BOARD_SIZE = 3;
-
 	public static void main(String[] args) {
 
-		int boardSize = DEFAULT_BOARD_SIZE;
-
-		if(args.length > 0) {
-			boardSize = Integer.parseInt(args[0]);
-		}
+		int boardSize = PropertiesLoader.getPropertyAsInteger("TicTacToe", "game.tictactoe.board.defaultsize");
 
 		GameManager gameManager = new GameManager();
 		gameManager.initialiseGame(boardSize);

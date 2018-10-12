@@ -2,6 +2,7 @@ package com.game.gui;
 
 
 import com.game.GameManager;
+import com.game.io.file.properties.PropertiesLoader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,9 +20,19 @@ public class GameWindow extends JFrame {
 	}
 
 	public void setUp() {
-		this.setTitle("TicTacToe");
+
+		final String title = String.format("%s - Version %s",
+							PropertiesLoader.getProperty("TicTacToe", "game.tictactoe.window.title"),
+							PropertiesLoader.getProperty("TicTacToe", "game.tictactoe.version"));
+
+		final int windowWidth = PropertiesLoader.getPropertyAsInteger("TicTacToe", "game.tictactoe.window.width");
+		final int windowHeight = PropertiesLoader.getPropertyAsInteger("TicTacToe", "game.tictactoe.window.height");
+
+
+		this.setTitle(title);
+
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		this.setSize(new Dimension(400,400));
+		this.setSize(new Dimension(windowWidth,windowHeight));
 
 		this.getContentPane().add(new BoardPanel(gameManager));
 
